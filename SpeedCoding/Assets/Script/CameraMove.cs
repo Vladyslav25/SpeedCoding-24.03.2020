@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,11 +7,18 @@ public class CameraMove : MonoBehaviour
 {
     public PlayerSettings m_playerSettings;
     public Transform m_player;
+    public Transform target;
 
     // Update is called once per frame
     void Update()
     {
         Rotation();
+        SetPos();
+    }
+
+    private void SetPos()
+    {
+        transform.position = target.position;
     }
 
     private void Rotation()
